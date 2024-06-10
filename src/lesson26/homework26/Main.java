@@ -13,7 +13,7 @@ public class Main {
         allowAccess.isAllowingAccess("http://web-for-us",human2.getType());
         allowAccess.isAllowingAccess("http://web-for-user",human3.getType());
 
-
+        System.out.println(6);
 
 
     }
