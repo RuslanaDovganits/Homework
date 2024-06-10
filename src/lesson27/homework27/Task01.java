@@ -24,47 +24,34 @@ public class Task01 {
         while (true) {
             System.out.println("Введите температуру реактора:");
             double temperature = scanner.nextDouble();
-
             temperatures.add(temperature);
-
             double averageTemperature = 0;
             double totalTemperature = 0;
-            double previousTemp = 0;
-
 
             for (int i = 0; i < temperatures.size(); i++) {
                 totalTemperature = totalTemperature + temperatures.get(i);
                 averageTemperature = totalTemperature / temperatures.size();
 
-                System.out.println("Средняя температура: " + averageTemperature);
+            }
 
-                if (temperatures.size() > 1) {
-                    double tempDifference = temperature - temperatures.get(temperatures.size() - 2);
+            System.out.println("Средняя температура: " + averageTemperature);
+            if (temperatures.size() < 2) {
+                System.out.println("Тыкай дальше =) ");
+            } else {
+                double lastTemperature = temperatures.get(temperatures.size() - 1);
+                double previousTemperature = temperatures.get(temperatures.size() - 2);
+                double tempDifference = lastTemperature - previousTemperature;
+                System.out.println("Текущая введенная температура отличается от предыдущей на " + tempDifference + " градусов");
 
-                    System.out.println("Текущая введеная температура отличается от предыдущей на: " + tempDifference);
-
-
-                    //System.out.println(previousTemp);
+                if (temperature > averageTemperature * 1.10 && temperature > previousTemperature * 1.20){
+                    System.out.println("Тревога, превышение температуры\nСрочно покиньте помещение!!! ");
+                    break;
                 }
 
             }
-
-
         }
     }
 }
-
-
-//  double averageTemperature = 0;
-// averageTemperature = totalTemperature / temperature.size();
-
-
-//System.out.println("Средняя температура ядерного реактора: " + averageTemperature);
-
-//for (int i = 0; i < temperature.size(); i++) {
-//totalTemperature = totalTemperature + temperature.get(i);
-
-
 
 
 
