@@ -30,6 +30,7 @@ public class Task01 {
 
             for (int i = 0; i < temperatures.size(); i++) {
                 totalTemperature = totalTemperature + temperatures.get(i);
+
                 averageTemperature = totalTemperature / temperatures.size();
 
             }
